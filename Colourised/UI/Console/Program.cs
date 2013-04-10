@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO.Ports;
-using SplashPixel.Hardware;
+using Colourised.Hardware;
 
-namespace SplashPixelConsole
+namespace Colourised.UI.Console
 {
     class Program
     {
@@ -13,30 +13,30 @@ namespace SplashPixelConsole
             var controller = new SerialController(port);
             //var controller = new VirtualController();
 
-            Console.ReadLine();
+            System.Console.ReadLine();
 
             controller.ShutDown();
 
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
                 controller.Channels[i].Target = 0;
             }
 
             controller.Update();
-            Console.ReadLine();
+            System.Console.ReadLine();
 
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
-                Console.WriteLine("Channel {0}", i);
+                System.Console.WriteLine("Channel {0}", i);
                 controller.Channels[i].Target = 4095;
 
                 controller.Update();
-                Console.ReadLine();
+                System.Console.ReadLine();
 
                 controller.Channels[i].Target = 0;
             }
 
-            Console.ReadLine();
+            System.Console.ReadLine();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SplashPixel.Hardware
+﻿namespace Colourised.Hardware
 {
     public abstract class Device
     {

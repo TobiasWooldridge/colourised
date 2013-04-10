@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 
-namespace SplashPixel.Hardware
+namespace Colourised.Hardware
 {
     public abstract class Controller
     {

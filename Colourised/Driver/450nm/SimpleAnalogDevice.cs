@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace SplashPixel.Hardware
+namespace Colourised.Hardware
 {
     public class SimpleAnalogDevice : Device
     {

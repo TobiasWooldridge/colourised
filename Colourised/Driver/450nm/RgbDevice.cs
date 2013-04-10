@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Drawing;
 
-namespace SplashPixel.Hardware
+namespace Colourised.Hardware
 {
     public class RgbDevice : Device
     {

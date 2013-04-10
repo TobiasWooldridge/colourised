@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace SplashPixel.Hardware
+namespace Colourised.Hardware
 {
     public class Channel
     {

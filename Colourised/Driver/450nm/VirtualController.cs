@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SplashPixel.Hardware
+namespace Colourised.Hardware
 {
     public class VirtualController : Controller
     {
