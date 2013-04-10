@@ -1,4 +1,4 @@
-﻿namespace Colourised.UI.Gui
+﻿namespace Colourised.UI.Wpf
 {
     /// <summary>
     /// Interaction logic for App.xaml

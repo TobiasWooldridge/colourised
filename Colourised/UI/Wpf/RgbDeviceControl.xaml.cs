@@ -1,6 +1,6 @@
 ﻿using Colourised.Driver;
 
-namespace Colourised.UI.Gui
+namespace Colourised.UI.Wpf
 {
     /// <summary>
     /// Interaction logic for RgbDeviceControl.xaml

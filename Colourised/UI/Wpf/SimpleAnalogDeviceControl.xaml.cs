@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Controls;
 using Colourised.Driver;
 
-namespace Colourised.UI.Gui
+namespace Colourised.UI.Wpf
 {
     /// <summary>
     /// Interaction logic for SimpleAnalogDeviceControl.xaml
