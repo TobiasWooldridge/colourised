@@ -1,4 +1,4 @@
-﻿namespace Colourised.Hardware
+﻿namespace Colourised.Driver
 {
     public abstract class Device
     {

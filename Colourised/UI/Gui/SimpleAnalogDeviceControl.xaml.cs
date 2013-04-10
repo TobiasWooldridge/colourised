@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Controls;
-using SplashPixel.Hardware;
+using Colourised.Driver;
 
-namespace SplashPixel.Gui
+namespace Colourised.UI.Gui
 {
     /// <summary>
     /// Interaction logic for SimpleAnalogDeviceControl.xaml
     /// </summary>
-    public partial class SimpleAnalogDeviceControl : UserControl
+    public partial class SimpleAnalogDeviceControl
     {
         public SimpleAnalogDeviceControl(SimpleAnalogDevice device)
         {

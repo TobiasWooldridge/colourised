@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Drawing;
 
-namespace Colourised.Hardware
+namespace Colourised.Driver
 {
     public class RgbDevice : Device
     {

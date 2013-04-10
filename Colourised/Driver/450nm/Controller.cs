@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 
-namespace Colourised.Hardware
+namespace Colourised.Driver
 {
     public abstract class Controller
     {
@@ -58,7 +58,7 @@ namespace Colourised.Hardware
                 SendCommand(Instruction.Ping, new List<byte>());
         }
 
-        private IEnumerable<byte> encodeIndexValue(UInt16 index, UInt16 value)
+        private IEnumerable<byte> EncodeIndexValue(UInt16 index, UInt16 value)
         {
 
             var encoded = new byte[3];
@@ -67,10 +67,10 @@ namespace Colourised.Hardware
             encoded[1] = (byte) (((index & 0x0F) << 4) + (value >> 8));
             encoded[2] = (byte) (value);
 
-//            Console.WriteLine("{0} {1} {2}", encoded[0], encoded[1], encoded[2]);
+            //Console.WriteLine("{0} {1} {2}", encoded[0], encoded[1], encoded[2]);
 
-            int i = ((encoded[0]) << 8) + ((encoded[1] & 0xF0) >> 4);
-            int v = (((encoded[1] & 0x0F)) << 8) + encoded[2];
+            //int i = ((encoded[0]) << 8) + ((encoded[1] & 0xF0) >> 4);
+            //int v = (((encoded[1] & 0x0F)) << 8) + encoded[2];
 
             //Console.WriteLine("L {0} {1} {2}", encoded[0], encoded[1], encoded[2]);
             //Console.WriteLine("L {0} {1}", i, v);
@@ -90,7 +90,7 @@ namespace Colourised.Hardware
                 // Don't resend if value hasn't changed
                 if (v == ControllerValues[i]) continue;
 
-                message.AddRange(encodeIndexValue(i, v));
+                message.AddRange(EncodeIndexValue(i, v));
 
                 ControllerValues[i] = v;
             }

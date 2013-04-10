@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Colourised.Hardware
+namespace Colourised.Driver
 {
     public class Channel
     {
@@ -36,7 +36,7 @@ namespace Colourised.Hardware
                     return _targetValue;
                 }
 
-                var transitionMillis = (double)(DateTime.Now - _valueChanged).TotalMilliseconds;
+                var transitionMillis = (DateTime.Now - _valueChanged).TotalMilliseconds;
 
                 // Fraction of 1 representing how far we are from _startValue to _targetValue
                 double transitioned = 0;

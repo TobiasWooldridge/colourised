@@ -7,8 +7,8 @@
     <ProjectGuid>{BEB5E435-E595-49E5-AF43-46A6AC2FFED6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SplashPixel.Device</RootNamespace>
-    <AssemblyName>SplashPixelDevice</AssemblyName>
+    <RootNamespace>Colourised.Driver</RootNamespace>
+    <AssemblyName>Colourised.Driver.450nm</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

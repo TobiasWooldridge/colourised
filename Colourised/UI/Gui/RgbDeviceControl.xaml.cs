@@ -1,20 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Windows.Controls;
-using SplashPixel.Hardware;
+﻿using Colourised.Driver;
 
-namespace SplashPixel.Gui
+namespace Colourised.UI.Gui
 {
     /// <summary>
     /// Interaction logic for RgbDeviceControl.xaml
     /// </summary>
-    public partial class RgbDeviceControl : UserControl
+    public partial class RgbDeviceControl
     {
         public RgbDeviceControl(RgbDevice rgbDevice)
         {
             InitializeComponent();
 
             ColorCanvas.SelectedColor = rgbDevice.TargetWmColor;
-            ColorCanvas.SelectedColorChanged += (s, a) => rgbDevice.TargetWmColor = a.NewValue;;
+            ColorCanvas.SelectedColorChanged += (s, a) => rgbDevice.TargetWmColor = a.NewValue;
         }
     }
 }

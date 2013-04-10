@@ -1,8 +1,7 @@
 ﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:gui="clr-namespace:Colourised.Gui"
-    x:Class="Colourised.Gui.MainWindow"
+    x:Class="Colourised.UI.Gui.MainWindow"
     Title="Colourised" MinWidth="450" MinHeight="300" Width="450" Height="381">
     <DockPanel>
         <Grid>

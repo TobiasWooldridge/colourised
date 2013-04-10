@@ -1,12 +1,11 @@
-﻿using System;
-using System.IO.Ports;
-using Colourised.Hardware;
+﻿using System.IO.Ports;
+using Colourised.Driver;
 
 namespace Colourised.UI.Console
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var port = new SerialPort("COM3", 115200);
 

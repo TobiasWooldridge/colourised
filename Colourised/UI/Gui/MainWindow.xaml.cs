@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO.Ports;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using SplashPixel.Hardware;
+using Colourised.Driver;
 
-namespace SplashPixel.Gui
+namespace Colourised.UI.Gui
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private readonly Controller _controller;
         private readonly List<Device> _devices;

@@ -1,18 +1,13 @@
 ﻿using System;
-
-using System.Collections.Generic;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Colourised.Hardware
+namespace Colourised.Driver
 {
     public class SerialController : Controller
     {
         private readonly SerialPort _port;
 
-        public SerialController(SerialPort port) : base()
+        public SerialController(SerialPort port)
         {
             _port = port;
             _port.Open();
@@ -22,10 +17,6 @@ namespace Colourised.Hardware
 
         protected override void Write(byte[] message)
         {
-            //Console.WriteLine();
-            //Console.WriteLine(BitConverter.ToString(message));
-            //Console.WriteLine();
-            
             try
             {
                 _port.Write(message, 0, message.Length);

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Colourised.Hardware
+namespace Colourised.Driver
 {
     public class VirtualController : Controller
     {
@@ -14,7 +10,7 @@ namespace Colourised.Hardware
             {
                 Console.Write("[Set Channels] \t");
 
-                UInt16 length = (UInt16)((message[2] << 8) + message[3]);
+                var length = (UInt16) ((message[2] << 8) + message[3]);
                 Console.Write("[{0} Channels]\t", length/4);
 
 
@@ -23,19 +19,17 @@ namespace Colourised.Hardware
                     int i = c*4 + 4;
 
                     int channel = (message[i] << 8) + message[i + 1];
-                    int value = (message[i+2] << 8) + message[i + 3];
+                    int value = (message[i + 2] << 8) + message[i + 3];
 
                     Console.Write("[C{0} V{1}]", channel, value);
                 }
 
-                    Console.WriteLine();
+                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine(BitConverter.ToString(message));
             }
         }
-
-
     }
 }
