@@ -8,12 +8,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="49*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
-        <Slider x:Name="FakeAnalogSlider" Maximum="4095" Grid.Column="0" />
-        <TextBox Grid.Column="1" Text="{Binding Mode=TwoWay, ElementName=FakeAnalogSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:0}}" />
+        <Slider Grid.Column="0" x:Name="FakeAnalogSlider" Maximum="4095" />
+        <TextBox Grid.Column="2" Text="{Binding Mode=TwoWay, ElementName=FakeAnalogSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:0}}" />
     </Grid>
 </UserControl>
