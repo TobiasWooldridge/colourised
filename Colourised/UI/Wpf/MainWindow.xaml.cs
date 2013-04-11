@@ -113,5 +113,10 @@ namespace Colourised.UI.Wpf
                 DevicePicker.SelectedIndex = index - 1;
             }
         }
+
+        private void AddDeviceButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

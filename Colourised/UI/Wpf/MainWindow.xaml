@@ -15,7 +15,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="AddDeviceButton" Grid.Column="0" Margin="2">Add</Button>
+                    <Button x:Name="AddDeviceButton" Grid.Column="0" Margin="2" Click="AddDeviceButton_Click">Add</Button>
                     <Button x:Name="RemoveDeviceButton" Grid.Column="1" Margin="2" Click="RemoveDeviceButton_Click">Remove</Button>
                 </Grid>
                 <ScrollViewer Margin="5,5,5,5" VerticalScrollBarVisibility="Auto">
