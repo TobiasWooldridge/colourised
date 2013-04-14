@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ColorConverter.cs" />
     <Compile Include="RgbDeviceControl.xaml.cs">
       <DependentUpon>RgbDeviceControl.xaml</DependentUpon>
     </Compile>

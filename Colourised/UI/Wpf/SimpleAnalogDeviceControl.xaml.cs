@@ -16,8 +16,8 @@ namespace Colourised.UI.Wpf
 
             Debug.Assert(device != null, "Device != null");
 
-            FakeAnalogSlider.Value = device.TargetValue;
-            FakeAnalogSlider.ValueChanged += (sender, args) => device.TargetValue = (UInt16)args.NewValue;
+            FakeAnalogSlider.Value = device.Target;
+            FakeAnalogSlider.ValueChanged += (sender, args) => device.Target = (UInt16)args.NewValue;
         }
     }
 }

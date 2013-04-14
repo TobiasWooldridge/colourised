@@ -44,7 +44,7 @@ namespace Colourised.UI.Wpf
             _devices.Add(new RgbDevice("Bottom", _controller.Channels[2], _controller.Channels[0],
                                        _controller.Channels[1]));
             _devices.Add(new RgbDevice("Left", _controller.Channels[5], _controller.Channels[4], _controller.Channels[3]));
-            _devices.AddRange(_controller.Channels.Select((t, i) => new SimpleAnalogDevice("Channel " + i, t)));
+
 
             Debug.Assert(DevicePicker != null, "DevicePicker != null");
             while (DevicePicker.Items.Count > 0)

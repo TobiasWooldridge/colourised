@@ -1,29 +1,28 @@
 ﻿using System;
 using System.Diagnostics;
+using Colourised.Driver.ChannelBehavior;
 
 namespace Colourised.Driver
 {
     public class SimpleAnalogDevice : Device
     {
-        public SimpleAnalogDevice(string name, Channel c) : base(name)
+        public SimpleAnalogDevice(string name, Channel c)
+            : base(name)
         {
             Debug.Assert(name != null, "name != null");
             Debug.Assert(c != null, "c != null");
 
-            Channel = c;
+            ChannelBehavior = new ImmediateBehavior();
+            c.Behavior = ChannelBehavior;
+
         }
 
-        private Channel Channel { get; set; }
+        private TargetableBehavior ChannelBehavior { get; set; }
 
-        public UInt16 CurrentValue
+        public UInt16 Target
         {
-            get { return Channel.Current; }
-        }
-
-        public UInt16 TargetValue
-        {
-            set { Channel.Target = value; }
-            get { return Channel.Target; }
+            set { ChannelBehavior.Target = value; }
+            get { return ChannelBehavior.Target; }
         }
 
         public override string ToString()

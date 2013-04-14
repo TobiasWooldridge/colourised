@@ -11,8 +11,8 @@ namespace Colourised.UI.Wpf
         {
             InitializeComponent();
 
-            ColorCanvas.SelectedColor = rgbDevice.TargetWmColor;
-            ColorCanvas.SelectedColorChanged += (s, a) => rgbDevice.TargetWmColor = a.NewValue;
+            ColorCanvas.SelectedColor = ColorConverter.Convert(rgbDevice.Target);
+            ColorCanvas.SelectedColorChanged += (s, a) => rgbDevice.Target = ColorConverter.Convert(a.NewValue);
         }
     }
 }

@@ -60,20 +60,11 @@ namespace Colourised.Driver
 
         private IEnumerable<byte> EncodeIndexValue(UInt16 index, UInt16 value)
         {
-
             var encoded = new byte[3];
 
             encoded[0] = (byte) (index >> 4);
             encoded[1] = (byte) (((index & 0x0F) << 4) + (value >> 8));
             encoded[2] = (byte) (value);
-
-            //Console.WriteLine("{0} {1} {2}", encoded[0], encoded[1], encoded[2]);
-
-            //int i = ((encoded[0]) << 8) + ((encoded[1] & 0xF0) >> 4);
-            //int v = (((encoded[1] & 0x0F)) << 8) + encoded[2];
-
-            //Console.WriteLine("L {0} {1} {2}", encoded[0], encoded[1], encoded[2]);
-            //Console.WriteLine("L {0} {1}", i, v);
 
             return encoded;
         }
@@ -85,7 +76,7 @@ namespace Colourised.Driver
             for (UInt16 i = 0; i < Channels.Length; i++)
             {
                 Channel c = Channels[i];
-                UInt16 v = c.Target;
+                ushort v = (ushort)(c.Current >> 4);
 
                 // Don't resend if value hasn't changed
                 if (v == ControllerValues[i]) continue;
