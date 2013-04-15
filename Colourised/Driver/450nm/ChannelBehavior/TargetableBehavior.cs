@@ -6,7 +6,7 @@
         public byte TargetByte
         {
             get { return (byte)(Target >> 8); }
-            set { Target = (ushort)(Target << 8); }
+            set { Target = (ushort)((ushort)value << 8); }
         }
     }
 }

@@ -76,7 +76,7 @@ namespace Colourised.Driver
             for (UInt16 i = 0; i < Channels.Length; i++)
             {
                 Channel c = Channels[i];
-                ushort v = (ushort)(c.Current >> 4);
+                var v = (ushort)(c.Current >> 4);
 
                 // Don't resend if value hasn't changed
                 if (v == ControllerValues[i]) continue;
