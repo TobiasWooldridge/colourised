@@ -1,6 +1,6 @@
 ﻿namespace Colourised.Driver.ChannelBehavior
 {
-    abstract class TargetableBehavior : ChannelBehavior
+    public abstract class TargetableBehavior : ChannelBehavior
     {
         public abstract ushort Target { get; set; }
         public byte TargetByte

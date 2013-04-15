@@ -2,13 +2,18 @@
 
 namespace Colourised.Driver.RgbDeviceBehavior
 {
-    abstract class RgbBehavior
+    public abstract class RgbBehavior
     {
-        ChannelBehavior.ChannelBehavior R { get; set; }
-        ChannelBehavior.ChannelBehavior G { get; set; }
-        ChannelBehavior.ChannelBehavior B { get; set; }
+        protected TargetableBehavior R { get; set; }
+        protected TargetableBehavior G { get; set; }
+        protected TargetableBehavior B { get; set; }
 
-        protected RgbBehavior(ChannelBehavior.ChannelBehavior r, ChannelBehavior.ChannelBehavior g, ChannelBehavior.ChannelBehavior b)
+        protected RgbBehavior()
+        {
+            
+        }
+
+        public void SetChannels(TargetableBehavior r, TargetableBehavior g, TargetableBehavior b)
         {
             R = r;
             G = g;

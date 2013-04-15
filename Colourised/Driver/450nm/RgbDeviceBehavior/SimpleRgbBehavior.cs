@@ -2,14 +2,17 @@
 
 namespace Colourised.Driver.RgbDeviceBehavior
 {
-    class SimpleRgbBehavior : RgbBehavior
+    public class SimpleRgbBehavior : RgbBehavior
     {
-        public SimpleRgbBehavior(ChannelBehavior.ChannelBehavior r, ChannelBehavior.ChannelBehavior g, ChannelBehavior.ChannelBehavior b)
-            : base(r, g, b)
+        public Color Color
         {
-
+            get { return Color.FromArgb(R.TargetByte, G.TargetByte, B.TargetByte); }
+            set
+            {
+                R.TargetByte = value.R;
+                G.TargetByte = value.G;
+                B.TargetByte = value.B;
+            }
         }
-
-        public Color Color { get; set; }
     }
 }

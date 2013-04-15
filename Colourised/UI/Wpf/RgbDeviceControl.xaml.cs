@@ -1,4 +1,5 @@
 ﻿using Colourised.Driver;
+using Colourised.Driver.RgbDeviceBehavior;
 
 namespace Colourised.UI.Wpf
 {
@@ -11,8 +12,12 @@ namespace Colourised.UI.Wpf
         {
             InitializeComponent();
 
-            ColorCanvas.SelectedColor = ColorConverter.Convert(rgbDevice.Target);
-            ColorCanvas.SelectedColorChanged += (s, a) => rgbDevice.Target = ColorConverter.Convert(a.NewValue);
+            if (rgbDevice.Behavior is SimpleRgbBehavior)
+            {
+                var b = (SimpleRgbBehavior)rgbDevice.Behavior; 
+                ColorCanvas.SelectedColor = ColorConverter.Convert(b.Color);
+                ColorCanvas.SelectedColorChanged += (s, a) => b.Color = ColorConverter.Convert(a.NewValue);
+            }
         }
     }
 }
