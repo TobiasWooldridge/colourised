@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Colourised.Driver;
+using Colourised.Driver.RgbDeviceBehavior;
 
 namespace Colourised.UI.Wpf
 {
@@ -78,7 +79,12 @@ namespace Colourised.UI.Wpf
 
             if (newValue is RgbDevice)
             {
-                control = new RgbDeviceControl((RgbDevice) newValue);
+                var device = (RgbDevice)newValue;
+
+                if (device.Behavior is SimpleRgbBehavior)
+                {
+                    control = new SimpleRgbDeviceControl((SimpleRgbBehavior) device.Behavior);
+                }
             }
             else if (newValue is SimpleAnalogDevice)
             {

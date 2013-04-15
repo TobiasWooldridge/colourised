@@ -13,6 +13,9 @@ namespace Colourised.Driver
         {
             set
             {
+                if (_behavior != null)
+                    _behavior.ReleaseChannels();
+                
                 value.SetChannels(R, G, B);
                 _behavior = value;
             }
@@ -35,8 +38,12 @@ namespace Colourised.Driver
             B = new ImmediateBehavior();
             b.Behavior = B;
 
-            
-            Behavior = new SimpleRgbBehavior();
+
+            var simpleBehavior = new SimpleRgbBehavior();
+            simpleBehavior.SetChannels(R, G, B);
+            simpleBehavior.Color = Color.Black;
+
+            Behavior = simpleBehavior;
         }
 
         private TargetableBehavior R { get; set; }

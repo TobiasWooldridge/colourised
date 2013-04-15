@@ -6,12 +6,23 @@ namespace Colourised.Driver.RgbDeviceBehavior
     {
         public Color Color
         {
-            get { return Color.FromArgb(R.TargetByte, G.TargetByte, B.TargetByte); }
+            get
+            {
+                if (HasChannels)
+                {
+                    return Color.FromArgb(R.TargetByte, G.TargetByte, B.TargetByte);
+                }
+
+                return Color.Black;
+            }
             set
             {
-                R.TargetByte = value.R;
-                G.TargetByte = value.G;
-                B.TargetByte = value.B;
+                if (HasChannels)
+                {
+                    R.TargetByte = value.R;
+                    G.TargetByte = value.G;
+                    B.TargetByte = value.B;
+                }
             }
         }
     }
