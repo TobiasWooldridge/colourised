@@ -86,6 +86,9 @@
     <Compile Include="SimpleAnalogDeviceControl.xaml.cs">
       <DependentUpon>SimpleAnalogDeviceControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ScreenSampleRgbDeviceControl.xaml.cs">
+      <DependentUpon>ScreenSampleRgbDeviceControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SimpleAnalogDeviceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScreenSampleRgbDeviceControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +145,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Colourised.Util\Colourised.Util.csproj">
+      <Project>{121956e4-199d-4503-96c9-8bacee2642f3}</Project>
+      <Name>Colourised.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Driver\450nm\Colourised.Driver.450nm.csproj">
       <Project>{beb5e435-e595-49e5-af43-46a6ac2ffed6}</Project>
       <Name>Colourised.Driver.450nm</Name>

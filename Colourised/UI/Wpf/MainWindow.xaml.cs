@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Colourised.Driver;
 using Colourised.Driver.RgbDeviceBehavior;
+using Colourised.UI.Gui;
 
 namespace Colourised.UI.Wpf
 {
@@ -84,6 +85,10 @@ namespace Colourised.UI.Wpf
                 if (device.Behavior is SimpleRgbBehavior)
                 {
                     control = new SimpleRgbDeviceControl((SimpleRgbBehavior) device.Behavior);
+                }
+                else if (device.Behavior is ScreenSampleRgbBehavior)
+                {
+                    control = new ScreenSampleRgbDeviceControl((ScreenSampleRgbBehavior) device.Behavior);
                 }
             }
             else if (newValue is SimpleAnalogDevice)

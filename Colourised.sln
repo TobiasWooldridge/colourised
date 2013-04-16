@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Driver.450nm", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.Console", "Colourised\UI\Console\Colourised.UI.Console.csproj", "{AA691E19-390B-48B1-834F-73B9D1E9F7F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Util", "Colourised.Util\Colourised.Util.csproj", "{121956E4-199D-4503-96C9-8BACEE2642F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{AA691E19-390B-48B1-834F-73B9D1E9F7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA691E19-390B-48B1-834F-73B9D1E9F7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA691E19-390B-48B1-834F-73B9D1E9F7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121956E4-199D-4503-96C9-8BACEE2642F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121956E4-199D-4503-96C9-8BACEE2642F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121956E4-199D-4503-96C9-8BACEE2642F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121956E4-199D-4503-96C9-8BACEE2642F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -39,11 +39,16 @@ namespace Colourised.Driver
             b.Behavior = B;
 
 
-            var simpleBehavior = new SimpleRgbBehavior();
-            simpleBehavior.SetChannels(R, G, B);
-            simpleBehavior.Color = Color.Black;
+            //var simpleBehavior = new SimpleRgbBehavior();
+            //simpleBehavior.SetChannels(R, G, B);
+            //simpleBehavior.Color = Color.Black;
 
-            Behavior = simpleBehavior;
+            //Behavior = simpleBehavior;
+
+            var sampleBehavior = new ScreenSampleRgbBehavior();
+            sampleBehavior.SetChannels(R, G, B);
+
+            Behavior = sampleBehavior;
         }
 
         private TargetableBehavior R { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Colourised.Driver.ChannelBehavior;
 
 namespace Colourised.Driver.RgbDeviceBehavior

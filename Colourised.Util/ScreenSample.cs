@@ -21,9 +21,9 @@ namespace Colourised.Util
 
             BitmapData bitmapData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
 
-            // Declare a single-dimensional array to hold the bytes of the bitmap.
+            // single-dimensional array to hold the the bitmap.
             int pixelCount = bounds.Width * bounds.Height;
-            int[] pixels = new int[pixelCount];
+            var pixels = new int[pixelCount];
 
             // Copy the RGB values into the array.
             IntPtr ptr = bitmapData.Scan0;
@@ -35,7 +35,7 @@ namespace Colourised.Util
             return pixels;
         }
 
-        public static Color AverageColor(int[] pixels)
+        private static Color AverageColor(int[] pixels)
         {
             long[] sums = new long[3];
             int pixelCount = pixels.Length;
@@ -49,7 +49,7 @@ namespace Colourised.Util
                 sums[2] += (pixel & 0x000000FF);
             }
 
-            byte[] averages = new byte[3];
+            var averages = new byte[3];
 
             // Bitshifting is done on the sums of the values rather than each and every value
             averages[0] = (byte)((sums[0] >> 16) / pixelCount);
@@ -59,6 +59,10 @@ namespace Colourised.Util
             return Color.FromArgb(255, averages[0], averages[1], averages[2]);
         }
 
+        public static Color FindAverage(Rectangle bounds)
+        {
+            var pixels = Sample(bounds);
+            return AverageColor(pixels);
+        }
     }
-
 }

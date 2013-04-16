@@ -48,6 +48,7 @@
     <Compile Include="ChannelBehavior\ImmediateBehavior.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RgbDeviceBehavior\ScreenSampleRgbBehavior.cs" />
     <Compile Include="RgbDeviceBehavior\SimpleRgbBehavior.cs" />
     <Compile Include="RgbDeviceBehavior\RgbBehavior.cs" />
     <Compile Include="SerialController.cs" />
@@ -57,7 +58,12 @@
     <Compile Include="SimpleAnalogDevice.cs" />
     <Compile Include="VirtualController.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Colourised.Util\Colourised.Util.csproj">
+      <Project>{121956e4-199d-4503-96c9-8bacee2642f3}</Project>
+      <Name>Colourised.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
