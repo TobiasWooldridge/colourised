@@ -17,15 +17,15 @@ namespace Colourised.UI.Gui
             _behavior = behavior;
         }
 
-        public int AreaX
+        public int SampleAreaX
         {
             get { return _behavior.SampleArea.X; }
             set {   }
         }
 
-        public int Y { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public int SampleAreaY { get; set; }
+        public int SampleAreaWidth { get; set; }
+        public int SampleAreaHeight { get; set; }
 
         private void TextBox_PreviewTextInput_1(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
