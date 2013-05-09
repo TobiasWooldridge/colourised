@@ -15,9 +15,9 @@ namespace Colourised.Driver
             PowerDown = 0xFF
         }
 
-        private const int MaxChildren = 1; // How many daisy chained TLC5940NT's -might- work
+        private const int ChildNodes = 1; // How many daisy chained TLC5940NT's -might- work
         private const int ChannelsPerChild = 16; // PWM channels provided by a TLC5940NT
-        private const int MaxChannels = MaxChildren*ChannelsPerChild;
+        private const int MaxChannels = ChildNodes*ChannelsPerChild;
         private const int PingInterval = 500; // How many ms idle we'll send a ping after
 
         private const byte Preamble = 0xBA;
@@ -34,6 +34,18 @@ namespace Colourised.Driver
             }
             ControllerValues = new UInt16[MaxChannels];
 
+            const int devicesPerChild = ChannelsPerChild/3;
+            const int rgbDeviceCount = devicesPerChild * ChildNodes;
+
+            RgbDevices = new RgbDevice[rgbDeviceCount];
+
+            for (int i = 0; i != rgbDeviceCount; i++)
+            {
+                int child = i / devicesPerChild;
+                int firstChannel = (child * ChannelsPerChild) + (i%devicesPerChild);
+                RgbDevices[i] = new RgbDevice(Channels[firstChannel], Channels[firstChannel+1], Channels[firstChannel+2], "RGB Device " + i);
+            }
+
             _worker = new Timer();
             _worker.Elapsed += Work;
             _worker.Interval = 16;
@@ -42,6 +54,7 @@ namespace Colourised.Driver
 
         public Channel[] Channels { get; private set; }
         public UInt16[] ControllerValues { get; private set; }
+        public RgbDevice[] RgbDevices { get; private set; }
 
         private void Work(Object sender, ElapsedEventArgs eea)
         {
@@ -76,7 +89,7 @@ namespace Colourised.Driver
             for (UInt16 i = 0; i < Channels.Length; i++)
             {
                 Channel c = Channels[i];
-                var v = (ushort)(c.Current >> 4);
+                var v = (ushort)(c.CurrentByte >> 4);
 
                 // Don't resend if value hasn't changed
                 if (v == ControllerValues[i]) continue;
@@ -125,6 +138,11 @@ namespace Colourised.Driver
         {
             StopUpdates();
             SendCommand(Instruction.PowerDown, new List<byte>());
+        }
+
+        public void GetRgbDevice()
+        {
+            
         }
     }
 }

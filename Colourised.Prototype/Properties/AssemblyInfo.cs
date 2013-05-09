@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Colourised.UI.WinForms")]
+[assembly: AssemblyTitle("Colourised.Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Colourised.UI.WinForms")]
+[assembly: AssemblyProduct("Colourised.Service")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b1a8b872-d0a1-447f-8a94-3f5669fe6801")]
+[assembly: Guid("e62e288d-e481-4cff-9fba-b9a5ac521154")]
 
 // Version information for an assembly consists of the following four values:
 //

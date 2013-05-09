@@ -4,8 +4,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Colourised.Driver;
-using Colourised.Driver.RgbDeviceBehavior;
-using Colourised.UI.Gui;
 
 namespace Colourised.UI.Wpf
 {
@@ -15,7 +13,7 @@ namespace Colourised.UI.Wpf
     public partial class MainWindow
     {
         private readonly Controller _controller;
-        private readonly List<Device> _devices;
+        private readonly List<RgbDevice> _devices;
 
         public MainWindow()
         {
@@ -26,7 +24,7 @@ namespace Colourised.UI.Wpf
             //_controller = new SerialController(port);
             _controller = new VirtualController();
 
-            _devices = new List<Device>();
+            _devices = new List<RgbDevice>();
 
             UpdateDeviceList();
 
@@ -40,12 +38,12 @@ namespace Colourised.UI.Wpf
 
         public void UpdateDeviceList()
         {
-            _devices.Add(new RgbDevice("Top", _controller.Channels[6], _controller.Channels[7], _controller.Channels[8]));
-            _devices.Add(new RgbDevice("Right", _controller.Channels[9], _controller.Channels[10],
-                                       _controller.Channels[11]));
-            _devices.Add(new RgbDevice("Bottom", _controller.Channels[2], _controller.Channels[0],
-                                       _controller.Channels[1]));
-            _devices.Add(new RgbDevice("Left", _controller.Channels[5], _controller.Channels[4], _controller.Channels[3]));
+            _devices.Add(new RgbDevice(_controller.Channels[6], _controller.Channels[7], _controller.Channels[8], "Top"));
+            _devices.Add(new RgbDevice(_controller.Channels[9], _controller.Channels[10],
+                                       _controller.Channels[11], "Right"));
+            _devices.Add(new RgbDevice(_controller.Channels[2], _controller.Channels[0],
+                                       _controller.Channels[1], "Bottom"));
+            _devices.Add(new RgbDevice(_controller.Channels[5], _controller.Channels[4], _controller.Channels[3], "Left"));
 
 
             Debug.Assert(DevicePicker != null, "DevicePicker != null");
@@ -54,7 +52,7 @@ namespace Colourised.UI.Wpf
                 DevicePicker.Items.RemoveAt(0);
             }
 
-            foreach (Device device in _devices)
+            foreach (RgbDevice device in _devices)
             {
                 DevicePicker.Items.Add(device);
             }
@@ -81,24 +79,7 @@ namespace Colourised.UI.Wpf
             if (newValue is RgbDevice)
             {
                 var device = (RgbDevice)newValue;
-
-                if (device.Behavior is SimpleRgbBehavior)
-                {
-                    control = new SimpleRgbDeviceControl((SimpleRgbBehavior) device.Behavior);
-                }
-                else if (device.Behavior is ScreenSampleRgbBehavior)
-                {
-                    control = new ScreenSampleRgbDeviceControl((ScreenSampleRgbBehavior) device.Behavior);
-                }
-            }
-            else if (newValue is SimpleAnalogDevice)
-            {
-                control = new SimpleAnalogDeviceControl((SimpleAnalogDevice) newValue);
-            }
-
-            if (control != null)
-            {
-                control.Margin = new Thickness(10);
+                control = new SimpleRgbDeviceControl(device);
             }
 
             GenericDeviceControl.Content = control;

@@ -54,7 +54,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Driver\450nm\Colourised.Driver.450nm.csproj">
+    <ProjectReference Include="..\Colourised.Driver.450nm\Colourised.Driver.450nm.csproj">
       <Project>{BEB5E435-E595-49E5-AF43-46A6AC2FFED6}</Project>
       <Name>Colourised.Driver.450nm</Name>
     </ProjectReference>

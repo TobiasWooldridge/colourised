@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.Wpf", "Colourised\UI\Wpf\Colourised.UI.Wpf.csproj", "{817B989C-9BF1-44D4-9753-22EC340A81CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.Wpf", "Colourised.UI.Wpf\Colourised.UI.Wpf.csproj", "{817B989C-9BF1-44D4-9753-22EC340A81CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Driver.450nm", "Colourised\Driver\450nm\Colourised.Driver.450nm.csproj", "{BEB5E435-E595-49E5-AF43-46A6AC2FFED6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Driver.450nm", "Colourised.Driver.450nm\Colourised.Driver.450nm.csproj", "{BEB5E435-E595-49E5-AF43-46A6AC2FFED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.Console", "Colourised\UI\Console\Colourised.UI.Console.csproj", "{AA691E19-390B-48B1-834F-73B9D1E9F7F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.Console", "Colourised.UI.Console\Colourised.UI.Console.csproj", "{AA691E19-390B-48B1-834F-73B9D1E9F7F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Util", "Colourised.Util\Colourised.Util.csproj", "{121956E4-199D-4503-96C9-8BACEE2642F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.UI.WinForms", "Colourised.UI.WinForms\Colourised.UI.WinForms.csproj", "{791D1AEF-E524-486B-9481-36ED28FF9985}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colourised.Prototype", "Colourised.Prototype\Colourised.Prototype.csproj", "{3BAA8310-F8FA-4703-8A6D-DFB256B4F54D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,10 @@ Global
 		{121956E4-199D-4503-96C9-8BACEE2642F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{121956E4-199D-4503-96C9-8BACEE2642F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{121956E4-199D-4503-96C9-8BACEE2642F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{791D1AEF-E524-486B-9481-36ED28FF9985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{791D1AEF-E524-486B-9481-36ED28FF9985}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{791D1AEF-E524-486B-9481-36ED28FF9985}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{791D1AEF-E524-486B-9481-36ED28FF9985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAA8310-F8FA-4703-8A6D-DFB256B4F54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAA8310-F8FA-4703-8A6D-DFB256B4F54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAA8310-F8FA-4703-8A6D-DFB256B4F54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAA8310-F8FA-4703-8A6D-DFB256B4F54D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

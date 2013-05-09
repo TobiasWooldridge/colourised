@@ -42,24 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelBehavior\ChannelBehavior.cs" />
-    <Compile Include="ChannelBehavior\TargetableBehavior.cs" />
-    <Compile Include="ChannelBehavior\SmoothBehavior.cs" />
-    <Compile Include="ChannelBehavior\ImmediateBehavior.cs" />
-    <Compile Include="Device.cs" />
+    <Compile Include="SmoothChannelBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RgbDeviceBehavior\ScreenSampleRgbBehavior.cs" />
-    <Compile Include="RgbDeviceBehavior\SimpleRgbBehavior.cs" />
-    <Compile Include="RgbDeviceBehavior\RgbBehavior.cs" />
     <Compile Include="SerialController.cs" />
     <Compile Include="Channel.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="RgbDevice.cs" />
-    <Compile Include="SimpleAnalogDevice.cs" />
     <Compile Include="VirtualController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Colourised.Util\Colourised.Util.csproj">
+    <ProjectReference Include="..\Colourised.Util\Colourised.Util.csproj">
       <Project>{121956e4-199d-4503-96c9-8bacee2642f3}</Project>
       <Name>Colourised.Util</Name>
     </ProjectReference>
